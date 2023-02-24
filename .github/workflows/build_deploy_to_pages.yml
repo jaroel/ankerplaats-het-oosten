@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: "latest"
           cache: "pnpm"
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: pnpm-lock.yaml
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
