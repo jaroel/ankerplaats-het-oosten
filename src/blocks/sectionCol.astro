@@ -5,11 +5,12 @@ interface Props {
     main_title: string;
     imageSrc: string;
     imageAlt: string;
+    bgClass?: "bg-gray";
 }
-const { id, sub_title, main_title, imageSrc, imageAlt } = Astro.props;
+const { id, sub_title, main_title, imageSrc, imageAlt, bgClass } = Astro.props;
 ---
 
-<section id={id} class="pt-120 relative">
+<section id={id} class:list={["pt-120 relative", bgClass]}>
     <div class="about_image flex items-end justify-end">
         <div class="image lg:pr-13">
             <img src={imageSrc} alt={imageAlt} />

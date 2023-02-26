@@ -3,11 +3,12 @@ interface Props {
     id: string;
     sub_title: string;
     main_title: string;
+    bgClass?: "bg-gray";
 }
-const { id, sub_title, main_title } = Astro.props;
+const { id, sub_title, main_title, bgClass } = Astro.props;
 ---
 
-<section id={id} class="pt-120 pb-120">
+<section id={id} class:list={["pt-120 pb-120", bgClass]}>
     <div class="container">
         <div class="row justify-center">
             <div class="w-full lg:w-1/2">
