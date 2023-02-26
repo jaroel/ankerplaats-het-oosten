@@ -6,6 +6,7 @@ specifiers:
   astro: ^2.0.15
   astro-compress: ^1.1.35
   tailwindcss: ^3.0.24
+  tiny-slider: ^2.9.4
   xo: ^0.53.1
 
 dependencies:
@@ -14,6 +15,7 @@ dependencies:
   astro: 2.0.15
   astro-compress: 1.1.35
   tailwindcss: 3.2.7_postcss@8.4.21
+  tiny-slider: 2.9.4
 
 devDependencies:
   xo: 0.53.1_webpack@5.75.0
@@ -5471,6 +5473,10 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
+    dev: false
+
+  /tiny-slider/2.9.4:
+    resolution: {integrity: sha512-LAs2kldWcY+BqCKw4kxd4CMx2RhWrHyEePEsymlOIISTlOVkjfK40sSD7ay73eKXBLg/UkluAZpcfCstimHXew==}
     dev: false
 
   /to-absolute-glob/2.0.2:

@@ -1,13 +1,6 @@
 ---
 import "@fontsource/nunito";
-import About from "../blocks/about.astro";
-import Blog from "../blocks/blog.astro";
-import Contact from "../blocks/contact.astro";
-import Pricing from "../blocks/pricing.astro";
-import Services from "../blocks/services.astro";
-import Team from "../blocks/team.astro";
-import Workprocess from "../blocks/workprocess.astro";
-import Works from "../blocks/works.astro";
+import Footer from "../blocks/footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -22,428 +15,15 @@ import Works from "../blocks/works.astro";
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width" />
 
-        <!--====== Favicon Icon ======-->
+        <link rel="stylesheet" href="/fonts/lineicons/font-css/LineIcons.css" />
         <link
             rel="shortcut icon"
             href=`${import.meta.env.BASE_URL}images/favicon.png`
             type="image/png"
         />
-
-        <!--====== Animate CSS ======-->
-        <link
-            rel="stylesheet"
-            href=`${import.meta.env.BASE_URL}css/animate.css`
-        />
-
-        <!--====== Slick CSS ======-->
-        <link
-            rel="stylesheet"
-            href=`${import.meta.env.BASE_URL}css/tiny-slider.css`
-        />
-
-        <!--====== Line Icons CSS ======-->
-        <link
-            rel="stylesheet"
-            href=`${import.meta.env.BASE_URL}fonts/lineicons/font-css/LineIcons.css`
-        />
-
-        <!--====== Tailwind CSS custom ======-->
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                font-family: "Nunito", sans-serif;
-                @apply text-body-color;
-            }
-            *:focus,
-            button:focus {
-                @apply outline-none shadow-none;
-                outline-offset: none;
-                outline: none;
-            }
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            h1 a,
-            h2 a,
-            h3 a,
-            h4 a,
-            h5 a,
-            h6 a {
-                @apply font-bold m-0 text-black;
-            }
-
-            h1 {
-                font-size: 45px;
-            }
-            h2 {
-                font-size: 30px;
-            }
-            h3 {
-                font-size: 25px;
-            }
-            h4 {
-                font-size: 20px;
-            }
-            h5 {
-                font-size: 18px;
-            }
-            h6 {
-                font-size: 16px;
-            }
-            a,
-            button {
-                @apply transition-all duration-300;
-            }
-            .container {
-                @apply px-4;
-            }
-            .row {
-                @apply flex flex-wrap;
-            }
-            .main-btn {
-                @apply inline-block font-medium text-base text-center rounded-full text-white cursor-pointer z-10 transition-all duration-300 bg-black overflow-hidden relative px-10 py-4 hover:bg-opacity-80 hover:text-white;
-                border-top-right-radius: 0px;
-            }
-
-            .btn-hover {
-                @apply relative overflow-hidden;
-            }
-
-            .border-btn {
-                @apply border-2 border-theme-color text-theme-color bg-transparent border-solid;
-            }
-            .border-btn:hover {
-                @apply text-theme-color relative;
-            }
-
-            .btn-hover::after {
-                @apply absolute w-0 h-0 rounded-full top-1/2 left-1/2 transition-all duration-500 transform-gpu scale-0 -translate-x-1/2 -translate-y-1/2;
-                padding: 50%;
-                content: "";
-                background: rgba(0, 0, 0, 0.05);
-            }
-
-            .btn-hover:hover::after {
-                @apply scale-150;
-            }
-
-            .scroll-top {
-                @apply w-11 h-11 bg-theme-color flex justify-center items-center text-white fixed bottom-8 right-8 rounded-md text-lg transition-all duration-300 z-20;
-            }
-            .scroll-top:hover {
-                @apply text-white;
-            }
-
-            .section_title .sub_title {
-                @apply text-base md:text-xl font-semibold text-theme-color;
-            }
-            .section_title .main_title {
-                @apply text-2xl md:text-4xl font-bold mt-4;
-            }
-            .section_title p {
-                @apply mt-5;
-            }
-
-            /* ============ navbar =========== */
-
-            .navbar-area {
-                @apply fixed top-0 left-0 w-full z-20 transition-all duration-300;
-            }
-            .sticky {
-                @apply fixed bg-white shadow-md;
-            }
-            .collapse.show {
-                @apply block;
-            }
-            .toggler-icon {
-                @apply relative block duration-300 bg-black;
-                height: 2px;
-                width: 30px;
-                margin: 6px 0;
-            }
-            .sticky .toggler-icon {
-                @apply bg-black;
-            }
-            .active > .toggler-icon:nth-child(1) {
-                @apply transform rotate-45;
-                top: 7px;
-            }
-            .active > .toggler-icon:nth-child(2) {
-                @apply opacity-0;
-            }
-            .active > .toggler-icon:nth-child(3) {
-                top: -8px;
-                transform: rotate(135deg);
-            }
-            .navbar-nav .nav-item a {
-                @apply inline-block text-base font-normal text-body-color relative z-10 py-2 lg:py-1 hover:text-theme-color;
-            }
-            .navbar-nav .nav-item a.active {
-                @apply text-theme-color;
-            }
-
-            /* =========== hero =========== */
-            .header_hero {
-                height: 900px;
-            }
-            @media (max-width: 1400px) {
-                .header_hero {
-                    height: 800px;
-                }
-            }
-            .hero_shape {
-                @apply absolute opacity-40 -z-10;
-            }
-            .shape_1 {
-                @apply top-150;
-                left: 10%;
-            }
-            .shape_2 {
-                @apply top-150;
-                left: 30%;
-            }
-            .shape_3 {
-                @apply top-200;
-                left: 40%;
-            }
-            .shape_4 {
-                @apply top-120;
-                left: 50%;
-            }
-            .shape_5 {
-                top: 40%;
-                left: 14%;
-            }
-            .shape_6 {
-                top: 34%;
-                left: 48%;
-            }
-            .shape_7 {
-                top: 60%;
-                left: 80px;
-            }
-            .shape_8 {
-                top: 55%;
-                left: 38%;
-            }
-            .shape_9 {
-                @apply bottom-25;
-                left: 13%;
-            }
-            .shape_10 {
-                @apply bottom-200 left-1/4;
-            }
-            .shape_11 {
-                @apply bottom-20;
-                left: 35%;
-            }
-            .shape_12 {
-                @apply bottom-1/4;
-                left: 42%;
-            }
-            .header_shape {
-                @apply absolute top-0 right-0 h-full w-1/2;
-            }
-            .header_shape::before {
-                content: "";
-                background-color: #f5f5fc;
-                transform: skewX(-15deg);
-                width: 200%;
-                @apply absolute top-0 left-0 h-full;
-            }
-            .header_image {
-                @apply lg:absolute top-0 right-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
-            }
-            .header_image img {
-                @apply max-w-full lg:w-auto xl:max-w-screen-md;
-            }
-
-            /* =========== service =========== */
-
-            .single_services {
-                @apply border-2 border-dashed border-border-color rounded-xl py-13 px-6 sm:py-6 sm:px-4 md:py-13 md:px-6 transition-all duration-300  hover:border-theme-color hover:shadow;
-            }
-            .services_icon {
-                @apply relative inline-block;
-            }
-            .services_icon i {
-                @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-black transition-all duration-300;
-            }
-            .services_shape {
-                fill: #fff1f1;
-                @apply transition-all duration-300;
-            }
-            .single_services:hover .services_icon i {
-                @apply text-white;
-            }
-            .single_services:hover .services_shape {
-                @apply fill-current text-theme-color;
-            }
-
-            /* ========== about ========== */
-            .about_image {
-                @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
-            }
-            .about_image img {
-                @apply max-w-full lg:w-auto lg:max-w-screen-md;
-            }
-            .about_check i {
-                @apply w-7 h-7 flex items-center justify-center text-white bg-theme-color rounded-full text-base mt-1;
-            }
-
-            /* ======= work ======== */
-            .single_item {
-                max-width: 370px;
-            }
-            .single_work {
-                @apply rounded-xl overflow-hidden my-8 bg-white shadow;
-            }
-            .work_content {
-                @apply p-7 relative;
-            }
-            .work_content .arrow {
-                @apply w-11 h-11 flex items-center justify-center rounded-full text-lg text-black absolute -top-5 right-7 bg-white transition-all duration-300 shadow hover:bg-theme-color hover:text-white;
-            }
-            .work_title a {
-                @apply text-black hover:text-theme-color;
-            }
-
-            /* ======== team ======= */
-            .tns-nav {
-                @apply absolute -bottom-5 left-0 w-full flex items-center justify-center z-10;
-            }
-            .tns-nav button {
-                @apply w-3 h-3 rounded-full border-none bg-theme-color bg-opacity-30 mx-2 hover:bg-opacity-100;
-            }
-            .tns-nav button.tns-nav-active {
-                @apply bg-opacity-100;
-            }
-            .single_team_item {
-                max-width: 405px;
-            }
-            .single_team {
-                @apply shadow rounded-xl my-8 overflow-hidden bg-white transition-all duration-300 hover:bg-theme-color;
-            }
-            .team_image .social li {
-                @apply mt-4 opacity-0 invisible transform translate-x-full;
-            }
-            .team_image .social li a {
-                @apply w-9 h-9 flex items-center justify-center rounded-full border-2 border-solid border-white text-white bg-transparent hover:bg-theme-color hover:border-theme-color;
-            }
-            .single_team:hover .social li {
-                @apply opacity-100 transition-all duration-300 visible translate-x-0;
-            }
-            .single_team:hover .social li:nth-child(1) {
-                @apply delay-100;
-            }
-            .single_team:hover .social li:nth-child(2) {
-                @apply delay-200;
-            }
-            .single_team:hover .social li:nth-child(3) {
-                @apply delay-300;
-            }
-            .single_team:hover .social li:nth-child(4) {
-                @apply delay-400;
-            }
-
-            /* =========== pricing ============= */
-            .pricing_menu .active {
-                @apply bg-theme-color text-white;
-            }
-            .pricing_content .tab-pane {
-                display: none;
-            }
-            .pricing_content .tab-pane.active {
-                display: block;
-            }
-
-            .single_pricing {
-                @apply border-2 border-dashed border-border-color rounded-xl p-6 md:p-10 transition-all duration-300 hover:border-theme-color hover:shadow;
-            }
-            .single_pricing.active {
-                @apply border-theme-color shadow;
-            }
-            .pricing_title .title {
-                @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-semibold text-xl text-black transition-all duration-300;
-            }
-            .single_pricing.active .pricing_title .title {
-                @apply text-white;
-            }
-            .single_pricing.active .services_shape,
-            .single_pricing:hover .services_shape {
-                @apply fill-current text-theme-color;
-            }
-            .pricing_btn {
-                @apply py-3 px-6 text-body-color mt-8 rounded-md;
-                background-color: #fff1f1;
-            }
-            .single_pricing:hover .pricing_btn,
-            .single_pricing.active .pricing_btn {
-                @apply bg-theme-color text-white;
-            }
-
-            /* ========== blog ========= */
-            .blog_title a {
-                @apply block text-black font-semibold mt-5 hover:text-theme-color text-xl sm:text-2xl;
-            }
-            .more_btn {
-                @apply inline-block text-black font-semibold mt-6 hover:text-theme-color;
-            }
-            /* ========== contact ========= */
-
-            .contact_image {
-                @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
-            }
-            .contact_image img {
-                @apply max-w-full lg:max-w-screen-md lg:w-auto;
-                max-width: 770px;
-            }
-            .contact-btn {
-                @apply bg-theme-color text-white py-4 px-10 rounded-md hover:bg-opacity-80;
-            }
-
-            /* =========== footer ========== */
-            .subscribe-btn {
-                @apply mt-3 md:mt-0 md:absolute top-1 right-1 py-4 bg-theme-color rounded-full hover:bg-opacity-80;
-            }
-            .footer_social li a {
-                @apply w-8 h-8 rounded-full bg-white bg-opacity-10 text-white flex items-center justify-center hover:text-theme-color hover:bg-opacity-100;
-            }
-        </style>
     </head>
 
     <body>
-        <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-        <!--====== PRELOADER PART START ======-->
-
-        <div class="preloader">
-            <div class="loader">
-                <div class="ytp-spinner">
-                    <div class="ytp-spinner-container">
-                        <div class="ytp-spinner-rotator">
-                            <div class="ytp-spinner-left">
-                                <div class="ytp-spinner-circle"></div>
-                            </div>
-                            <div class="ytp-spinner-right">
-                                <div class="ytp-spinner-circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--====== PRELOADER PART ENDS ======-->
-
         <!--====== HEADER PART START ======-->
 
         <section class="header_area">
@@ -649,215 +229,11 @@ import Works from "../blocks/works.astro";
 
         <!--====== HEADER PART ENDS ======-->
 
-        <Workprocess />
+        <slot />
 
-        <About />
-
-        <Services />
-
-        <Works />
-
-        <Pricing § />
-
-        <Team />
-
-        <Blog />
-
-        <Contact />
+        <Footer />
 
         <!--====== FOOTER PART START ======-->
-
-        <footer id="footer" class="footer_area bg-black relative z-10">
-            <div
-                class="shape absolute left-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
-            >
-                <img
-                    src=`${import.meta.env.BASE_URL}images/footer-shape-left.png`
-                    alt=""
-                />
-            </div>
-            <div
-                class="shape absolute right-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
-            >
-                <img
-                    src=`${import.meta.env.BASE_URL}images/footer-shape-right.png`
-                    alt=""
-                />
-            </div>
-            <div class="container">
-                <div class="footer_widget pt-18 pb-120">
-                    <div class="row justify-center">
-                        <div class="w-full md:w-1/2 lg:w-3/12">
-                            <div class="footer_about mt-13 mx-3">
-                                <div class="footer_logo">
-                                    <a href="#"
-                                        ><img
-                                            src=`${import.meta.env.BASE_URL}images/logo-footer.svg`
-                                            alt=""
-                                        /></a
-                                    >
-                                </div>
-                                <div class="footer_content mt-8">
-                                    <p class="text-white">
-                                        Lorem ipsum dolor sitco nsetetu nonumy
-                                        eirmod tempor invidunt ut labore et
-                                        dolore magna uyam erat, sed diam.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- footer about -->
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-5/12">
-                            <div
-                                class="footer_link_wrapper flex flex-wrap mx-3"
-                            >
-                                <div class="footer_link w-1/2 md:pl-13 mt-13">
-                                    <h2
-                                        class="footer_title text-xl font-semibold text-white"
-                                    >
-                                        Quick Links
-                                    </h2>
-                                    <ul class="link pt-4">
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >Company</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >Privacy Policy</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >About</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- footer link -->
-                                <div class="footer_link w-1/2 md:pl-13 mt-13">
-                                    <h2
-                                        class="footer_title text-xl font-semibold text-white"
-                                    >
-                                        Resources
-                                    </h2>
-                                    <ul class="link pt-4">
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >Support</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >Contact</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                class="text-white mt-4 hover:text-theme-color"
-                                                >Terms</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- footer link -->
-                            </div>
-                            <!-- footer link wrapper -->
-                        </div>
-                        <div class="w-full md:w-2/3 lg:w-4/12">
-                            <div class="footer_subscribe mt-13 mx-3">
-                                <h2
-                                    class="footer_title text-xl font-semibold text-white"
-                                >
-                                    Newsletter
-                                </h2>
-                                <div
-                                    class="subscribe_form text-right mt-9 relative"
-                                >
-                                    <form action="#">
-                                        <input
-                                            type="text"
-                                            placeholder="Enter email"
-                                            class="w-full py-5 px-6 bg-white text-black rounded-full border-none"
-                                        />
-                                        <button class="main-btn subscribe-btn"
-                                            >Subscribe</button
-                                        >
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- footer subscribe -->
-                        </div>
-                    </div>
-                    <!-- row -->
-                </div>
-                <!-- footer widget -->
-                <div
-                    class="footer_copyright pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between"
-                >
-                    <div class="footer_social pt-4 mx-3 text-center">
-                        <ul class="social flex justify-center sm:justify-start">
-                            <li class="mr-3">
-                                <a href="https://facebook.com/uideckHQ"
-                                    ><i class="lni lni-facebook-filled"></i></a
-                                >
-                            </li>
-                            <li class="mr-3">
-                                <a href="https://twitter.com/uideckHQ"
-                                    ><i class="lni lni-twitter-filled"></i></a
-                                >
-                            </li>
-                            <li class="mr-3">
-                                <a href="https://instagram.com/uideckHQ"
-                                    ><i class="lni lni-instagram-original"
-                                    ></i></a
-                                >
-                            </li>
-                            <li class="mr-3">
-                                <a href="#"
-                                    ><i class="lni lni-linkedin-original"
-                                    ></i></a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- footer social -->
-                    <div class="footer_copyright_content pt-4 text-center">
-                        <p class="text-body-color">
-                            Integration by <a
-                                href="https://www.jaroel.nl/"
-                                title="Zeg 'ja' tegen Roel"
-                                class="hover:text-theme-color">Roel Bruggink</a
-                            >. Design and template by <a
-                                href="https://uideck.com"
-                                rel="nofollow"
-                                class="hover:text-theme-color">UIdeck</a
-                            > and <a
-                                href="https://tailwindtemplates.co"
-                                rel="nofollow"
-                                class="hover:text-theme-color"
-                                >Tailwind Templates</a
-                            >.
-                        </p>
-                    </div>
-                    <!-- footer copyright content -->
-                </div>
-                <!-- footer copyright -->
-            </div>
-            <!-- container -->
-        </footer>
 
         <!--====== FOOTER PART ENDS ======-->
 
@@ -866,12 +242,306 @@ import Works from "../blocks/works.astro";
         <a href="#" class="scroll-top"><i class="lni lni-chevron-up"></i></a>
 
         <!--====== BACK TOP TOP PART ENDS ======-->
-
-        <!--====== Wow js ======-->
-        <script src=`${import.meta.env.BASE_URL}js/wow.min.js` is:inline
-        ></script>
-
-        <!--====== Main js ======-->
-        <script src=`${import.meta.env.BASE_URL}js/main.js` is:inline></script>
     </body>
 </html>
+<script is:inline>
+    (function () {
+        /* =====================================
+        Sticky
+        ======================================= */
+        window.addEventListener("scroll", () => {
+            const header_navbar = document.querySelector(".navbar-area");
+            const sticky = header_navbar.offsetTop;
+
+            if (window.pageYOffset > sticky) {
+                header_navbar.classList.add("sticky");
+            } else {
+                header_navbar.classList.remove("sticky");
+            }
+
+            // Show or hide the back-top-top button
+            const backToTo = document.querySelector(".scroll-top");
+            backToTo.style.display =
+                document.body.scrollTop > 50 ||
+                document.documentElement.scrollTop > 50
+                    ? "flex"
+                    : "none";
+        });
+
+        // For menu scroll
+        const pageLink = document.querySelectorAll(".page-scroll");
+
+        for (const element of pageLink) {
+            element.addEventListener("click", (e) => {
+                e.preventDefault();
+                document
+                    .querySelector(element.getAttribute("href"))
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        offsetTop: 1 - 60,
+                    });
+            });
+        }
+
+        // Section menu active
+        function onScroll(event) {
+            const sections = document.querySelectorAll(".page-scroll");
+            const scrollPos =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            for (const currLink of sections) {
+                const value = currLink.getAttribute("href");
+                const refElement = document.querySelector(value);
+                const scrollTopMinus = scrollPos + 73;
+                if (
+                    refElement.offsetTop <= scrollTopMinus &&
+                    refElement.offsetTop + refElement.offsetHeight >
+                        scrollTopMinus
+                ) {
+                    document
+                        .querySelector(".page-scroll")
+                        .classList.remove("active");
+                    currLink.classList.add("active");
+                } else {
+                    currLink.classList.remove("active");
+                }
+            }
+        }
+
+        window.document.addEventListener("scroll", onScroll);
+
+        // ===== close navbar-collapse when a  clicked
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+
+        for (const e of document.querySelectorAll(".page-scroll")) {
+            e.addEventListener("click", () => {
+                navbarToggler.classList.remove("active");
+                navbarCollapse.classList.remove("show");
+            });
+        }
+
+        navbarToggler.addEventListener("click", () => {
+            navbarToggler.classList.toggle("active");
+            // NavbarCollapse.classList.toggle('show')
+        });
+    })();
+</script>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Nunito", sans-serif;
+        @apply text-body-color;
+    }
+    *:focus,
+    button:focus {
+        @apply outline-none shadow-none;
+        outline-offset: none;
+        outline: none;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+        @apply font-bold m-0 text-black;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    a,
+    button {
+        @apply transition-all duration-300;
+    }
+    .container {
+        @apply px-4;
+    }
+    .row {
+        @apply flex flex-wrap;
+    }
+    .main-btn {
+        @apply inline-block font-medium text-base text-center rounded-full text-white cursor-pointer z-10 transition-all duration-300 bg-black overflow-hidden relative px-10 py-4 hover:bg-opacity-80 hover:text-white;
+        border-top-right-radius: 0px;
+    }
+
+    .btn-hover {
+        @apply relative overflow-hidden;
+    }
+
+    .border-btn {
+        @apply border-2 border-theme-color text-theme-color bg-transparent border-solid;
+    }
+    .border-btn:hover {
+        @apply text-theme-color relative;
+    }
+
+    .btn-hover::after {
+        @apply absolute w-0 h-0 rounded-full top-1/2 left-1/2 transition-all duration-500 transform-gpu scale-0 -translate-x-1/2 -translate-y-1/2;
+        padding: 50%;
+        content: "";
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-hover:hover::after {
+        @apply scale-150;
+    }
+
+    .scroll-top {
+        @apply w-11 h-11 bg-theme-color flex justify-center items-center text-white fixed bottom-8 right-8 rounded-md text-lg transition-all duration-300 z-20;
+    }
+    .scroll-top:hover {
+        @apply text-white;
+    }
+
+    .section_title .sub_title {
+        @apply text-base md:text-xl font-semibold text-theme-color;
+    }
+    .section_title .main_title {
+        @apply text-2xl md:text-4xl font-bold mt-4;
+    }
+    .section_title p {
+        @apply mt-5;
+    }
+
+    /* ============ navbar =========== */
+
+    .navbar-area {
+        @apply fixed top-0 left-0 w-full z-20 transition-all duration-300;
+    }
+    .sticky {
+        @apply fixed bg-white shadow-md;
+    }
+    .collapse.show {
+        @apply block;
+    }
+    .toggler-icon {
+        @apply relative block duration-300 bg-black;
+        height: 2px;
+        width: 30px;
+        margin: 6px 0;
+    }
+    .sticky .toggler-icon {
+        @apply bg-black;
+    }
+    .active > .toggler-icon:nth-child(1) {
+        @apply transform rotate-45;
+        top: 7px;
+    }
+    .active > .toggler-icon:nth-child(2) {
+        @apply opacity-0;
+    }
+    .active > .toggler-icon:nth-child(3) {
+        top: -8px;
+        transform: rotate(135deg);
+    }
+    .navbar-nav .nav-item a {
+        @apply inline-block text-base font-normal text-body-color relative z-10 py-2 lg:py-1 hover:text-theme-color;
+    }
+    .navbar-nav .nav-item a.active {
+        @apply text-theme-color;
+    }
+
+    /* =========== hero =========== */
+    .header_hero {
+        height: 900px;
+    }
+    @media (max-width: 1400px) {
+        .header_hero {
+            height: 800px;
+        }
+    }
+    .hero_shape {
+        @apply absolute opacity-40 -z-10;
+    }
+    .shape_1 {
+        @apply top-150;
+        left: 10%;
+    }
+    .shape_2 {
+        @apply top-150;
+        left: 30%;
+    }
+    .shape_3 {
+        @apply top-200;
+        left: 40%;
+    }
+    .shape_4 {
+        @apply top-120;
+        left: 50%;
+    }
+    .shape_5 {
+        top: 40%;
+        left: 14%;
+    }
+    .shape_6 {
+        top: 34%;
+        left: 48%;
+    }
+    .shape_7 {
+        top: 60%;
+        left: 80px;
+    }
+    .shape_8 {
+        top: 55%;
+        left: 38%;
+    }
+    .shape_9 {
+        @apply bottom-25;
+        left: 13%;
+    }
+    .shape_10 {
+        @apply bottom-200 left-1/4;
+    }
+    .shape_11 {
+        @apply bottom-20;
+        left: 35%;
+    }
+    .shape_12 {
+        @apply bottom-1/4;
+        left: 42%;
+    }
+    .header_shape {
+        @apply absolute top-0 right-0 h-full w-1/2;
+    }
+    .header_shape::before {
+        content: "";
+        background-color: #f5f5fc;
+        transform: skewX(-15deg);
+        width: 200%;
+        @apply absolute top-0 left-0 h-full;
+    }
+    .header_image {
+        @apply lg:absolute top-0 right-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
+    }
+    .header_image img {
+        @apply max-w-full lg:w-auto xl:max-w-screen-md;
+    }
+</style>

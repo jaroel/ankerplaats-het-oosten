@@ -1,123 +1,187 @@
-<!--====== SERVICES PART START ======-->
-<section class="services_area pt-120" id="about">
+<footer id="footer" class="footer_area bg-black relative z-10">
+    <div
+        class="shape absolute left-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
+    >
+        <img
+            src=`${import.meta.env.BASE_URL}images/footer-shape-left.png`
+            alt=""
+        />
+    </div>
+    <div
+        class="shape absolute right-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
+    >
+        <img
+            src=`${import.meta.env.BASE_URL}images/footer-shape-right.png`
+            alt=""
+        />
+    </div>
     <div class="container">
-        <div class="row justify-center">
-            <div class="w-full lg:w-1/2">
-                <div class="section_title text-center pb-6">
-                    <h5 class="sub_title">About</h5>
-                    <h4 class="main_title">Work Process</h4>
+        <div class="footer_widget pt-18 pb-120">
+            <div class="row justify-center">
+                <div class="w-full md:w-1/2 lg:w-3/12">
+                    <div class="footer_about mt-13 mx-3">
+                        <div class="footer_logo">
+                            <a href="#"
+                                ><img
+                                    src=`${import.meta.env.BASE_URL}images/logo-footer.svg`
+                                    alt=""
+                                /></a
+                            >
+                        </div>
+                        <div class="footer_content mt-8">
+                            <p class="text-white">
+                                Lorem ipsum dolor sitco nsetetu nonumy eirmod
+                                tempor invidunt ut labore et dolore magna uyam
+                                erat, sed diam.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- footer about -->
                 </div>
-                <!-- section title -->
+                <div class="w-full md:w-1/2 lg:w-5/12">
+                    <div class="footer_link_wrapper flex flex-wrap mx-3">
+                        <div class="footer_link w-1/2 md:pl-13 mt-13">
+                            <h2
+                                class="footer_title text-xl font-semibold text-white"
+                            >
+                                Quick Links
+                            </h2>
+                            <ul class="link pt-4">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >Company</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >Privacy Policy</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >About</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- footer link -->
+                        <div class="footer_link w-1/2 md:pl-13 mt-13">
+                            <h2
+                                class="footer_title text-xl font-semibold text-white"
+                            >
+                                Resources
+                            </h2>
+                            <ul class="link pt-4">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >Support</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >Contact</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="text-white mt-4 hover:text-theme-color"
+                                        >Terms</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- footer link -->
+                    </div>
+                    <!-- footer link wrapper -->
+                </div>
+                <div class="w-full md:w-2/3 lg:w-4/12">
+                    <div class="footer_subscribe mt-13 mx-3">
+                        <h2
+                            class="footer_title text-xl font-semibold text-white"
+                        >
+                            Newsletter
+                        </h2>
+                        <div class="subscribe_form text-right mt-9 relative">
+                            <form action="#">
+                                <input
+                                    type="text"
+                                    placeholder="Enter email"
+                                    class="w-full py-5 px-6 bg-white text-black rounded-full border-none"
+                                />
+                                <button class="main-btn subscribe-btn"
+                                    >Subscribe</button
+                                >
+                            </form>
+                        </div>
+                    </div>
+                    <!-- footer subscribe -->
+                </div>
             </div>
+            <!-- row -->
         </div>
-        <!-- row -->
-        <div class="row justify-center">
-            <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                <div class="single_services text-center mt-8 mx-3">
-                    <div class="services_icon">
-                        <i class="lni lni-write"></i>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="94"
-                            height="92"
-                            viewBox="0 0 94 92"
+        <!-- footer widget -->
+        <div
+            class="footer_copyright pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between"
+        >
+            <div class="footer_social pt-4 mx-3 text-center">
+                <ul class="social flex justify-center sm:justify-start">
+                    <li class="mr-3">
+                        <a href="https://facebook.com/uideckHQ"
+                            ><i class="lni lni-facebook-filled"></i></a
                         >
-                            <path
-                                class="services_shape"
-                                id="Polygon_12"
-                                data-name="Polygon 12"
-                                d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="services_content mt-5">
-                        <h3
-                            class="services_title text-black font-semibold text-xl md:text-3xl"
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://twitter.com/uideckHQ"
+                            ><i class="lni lni-twitter-filled"></i></a
                         >
-                            Research
-                        </h3>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consetetur sadi aliquyam
-                            erat, sed diam voluptua. At vero eos accusam et
-                            justo duo dolores
-                        </p>
-                    </div>
-                </div>
-                <!-- single services -->
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://instagram.com/uideckHQ"
+                            ><i class="lni lni-instagram-original"></i></a
+                        >
+                    </li>
+                    <li class="mr-3">
+                        <a href="#"><i class="lni lni-linkedin-original"></i></a
+                        >
+                    </li>
+                </ul>
             </div>
-            <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                <div class="single_services text-center mt-8 mx-3">
-                    <div class="services_icon">
-                        <i class="lni lni-bulb"></i>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="94"
-                            height="92"
-                            viewBox="0 0 94 92"
-                        >
-                            <path
-                                class="services_shape"
-                                id="Polygon_12"
-                                data-name="Polygon 12"
-                                d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="services_content mt-5">
-                        <h3
-                            class="services_title text-black font-semibold text-xl md:text-3xl"
-                        >
-                            Prototype
-                        </h3>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consetetur sadi aliquyam
-                            erat, sed diam voluptua. At vero eos accusam et
-                            justo duo dolores
-                        </p>
-                    </div>
-                </div>
-                <!-- single services -->
+            <!-- footer social -->
+            <div class="footer_copyright_content pt-4 text-center">
+                <p class="text-body-color">
+                    Integration by <a
+                        href="https://www.jaroel.nl/"
+                        title="Zeg 'ja' tegen Roel"
+                        class="hover:text-theme-color">Roel Bruggink</a
+                    >. Design and template by <a
+                        href="https://uideck.com"
+                        rel="nofollow"
+                        class="hover:text-theme-color">UIdeck</a
+                    > and <a
+                        href="https://tailwindtemplates.co"
+                        rel="nofollow"
+                        class="hover:text-theme-color">Tailwind Templates</a
+                    >.
+                </p>
             </div>
-            <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                <div class="single_services text-center mt-8 mx-3">
-                    <div class="services_icon">
-                        <i class="lni lni-checkmark-circle"></i>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="94"
-                            height="92"
-                            viewBox="0 0 94 92"
-                        >
-                            <path
-                                class="services_shape"
-                                id="Polygon_12"
-                                data-name="Polygon 12"
-                                d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="services_content mt-5">
-                        <h3
-                            class="services_title text-black font-semibold text-xl md:text-3xl"
-                        >
-                            Build
-                        </h3>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consetetur sadi aliquyam
-                            erat, sed diam voluptua. At vero eos accusam et
-                            justo duo dolores
-                        </p>
-                    </div>
-                </div>
-                <!-- single services -->
-            </div>
+            <!-- footer copyright content -->
         </div>
-        <!-- row -->
+        <!-- footer copyright -->
     </div>
     <!-- container -->
-</section>
+</footer>
 
-<!--====== SERVICES PART ENDS ======-->
 <style>
     html {
         scroll-behavior: smooth;

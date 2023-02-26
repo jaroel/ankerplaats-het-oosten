@@ -1,0 +1,63 @@
+---
+interface Props {
+    id: string;
+    sub_title: string;
+    main_title: string;
+    imageSrc: string;
+    imageAlt: string;
+}
+const { id, sub_title, main_title, imageSrc, imageAlt } = Astro.props;
+---
+
+<section id={id} class="pt-120 relative">
+    <div class="about_image flex items-end justify-end">
+        <div class="image lg:pr-13">
+            <img src={imageSrc} alt={imageAlt} />
+        </div>
+    </div>
+    <!-- about image -->
+    <div class="container">
+        <div class="row justify-end">
+            <div class="w-full lg:w-1/2">
+                <div class="mx-4 pt-11 lg:pt-15 lg:pb-15">
+                    <div class="section_title pb-9">
+                        <h5 class="sub_title">{sub_title}</h5>
+                        <h4 class="main_title">{main_title}</h4>
+                    </div>
+                    <!-- section title -->
+                    <slot />
+                </div>
+                <!-- about content -->
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+<style>
+    .container {
+        @apply px-4;
+    }
+    .row {
+        @apply flex flex-wrap;
+    }
+    .section_title .sub_title {
+        @apply text-base md:text-xl font-semibold text-theme-color;
+    }
+    .section_title .main_title {
+        @apply text-2xl md:text-4xl font-bold mt-4;
+    }
+    .section_title p {
+        @apply mt-5;
+    }
+
+    .about_image {
+        @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
+    }
+    .about_image img {
+        @apply max-w-full lg:w-auto lg:max-w-screen-md;
+    }
+    .about_check i {
+        @apply w-7 h-7 flex items-center justify-center text-white bg-theme-color rounded-full text-base mt-1;
+    }
+</style>

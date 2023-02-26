@@ -1,8 +1,46 @@
 ---
 import "@fontsource/nunito";
+import About from "../blocks/about.astro";
+import Blog from "../blocks/blog.astro";
+import Contact from "../blocks/contact.astro";
+import Pricing from "../blocks/pricing.astro";
+import SectionRow from "../blocks/sectionRow.astro";
+import Team from "../blocks/team.astro";
+import Works from "../blocks/works.astro";
+import Tile from "../components/tile.astro";
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-  <p>replace me with blocks</p>
+    <SectionRow id="about" sub_title="About" main_title="Work Process">
+        <Tile
+            icon="lni-write"
+            title="Research"
+            description="Lorem ipsum dolor sit amet, consetetur sadi erat, sed diam voluptua. At vero eos accusam et justo duo dolores"
+        />
+        <Tile
+            icon="lni-bulb"
+            title="Prototype"
+            description="Lorem ipsum dolor sit amet, consetetur sadi erat, sed diam voluptua. At vero eos accusam et justo duo dolores"
+        />
+        <Tile
+            icon="lni-checkmark-circle"
+            title="Build"
+            description="Lorem ipsum dolor sit amet, consetetur sadi erat, sed diam voluptua. At vero eos accusam et justo duo dolores"
+        />
+    </SectionRow>
+    <About id="why" />
+    <SectionRow id="services" sub_title="What We Do" main_title="Our Services">
+        <Tile icon="lni-layout" title="Web Design" />
+        <Tile icon="lni-bullhorn" title="Digital Marketing" />
+        <Tile icon="lni-mobile" title="Mobile Apps" />
+        <Tile icon="lni-seo" title="SEO Consultancy" />
+        <Tile icon="lni-layers" title="Graphic Design" />
+        <Tile icon="lni-briefcase" title="Business Consultancy" />
+    </SectionRow>
+    <Works id="work" />
+    <Pricing id="pricing" />
+    <Team id="team" />
+    <Blog />
+    <Contact id="contact" />
 </Layout>

@@ -1,0 +1,45 @@
+---
+interface Props {
+    imageSrc: string;
+    title: string;
+    description: string;
+}
+const { imageSrc, title, description } = Astro.props;
+---
+
+<div class="w-full lg:w-3/12">
+    <div class="single_item mx-auto">
+        <div class="single_work mx-3">
+            <div>
+                <img src={imageSrc} alt="work" class="w-full" />
+            </div>
+            <div class="work_content">
+                <a href="#" class="arrow"
+                    ><i class="lni lni-chevron-right"></i></a
+                >
+                <h4 class="work_title text-xl md:text-2xl">
+                    <a href="#">{title}</a>
+                </h4>
+                <p class="mt-2">{description}</p>
+            </div>
+        </div>
+    </div>
+    <!-- single work -->
+</div>
+<style>
+    .single_item {
+        max-width: 370px;
+    }
+    .single_work {
+        @apply rounded-xl overflow-hidden my-8 bg-white shadow;
+    }
+    .work_content {
+        @apply p-7 relative;
+    }
+    .work_content .arrow {
+        @apply w-11 h-11 flex items-center justify-center rounded-full text-lg text-black absolute -top-5 right-7 bg-white transition-all duration-300 shadow hover:bg-theme-color hover:text-white;
+    }
+    .work_title a {
+        @apply text-black hover:text-theme-color;
+    }
+</style>
