@@ -15,7 +15,10 @@ import Footer from "../blocks/footer.astro";
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width" />
 
-        <link rel="stylesheet" href="/fonts/lineicons/font-css/LineIcons.css" />
+        <link
+            rel="stylesheet"
+            href=`${import.meta.env.BASE_URL}/fonts/lineicons/font-css/LineIcons.css`
+        />
         <link
             rel="shortcut icon"
             href=`${import.meta.env.BASE_URL}images/favicon.png`
