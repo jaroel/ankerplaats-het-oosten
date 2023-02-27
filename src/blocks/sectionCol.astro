@@ -5,12 +5,21 @@ interface Props {
     main_title: string;
     imageSrc: string;
     imageAlt: string;
-    bgClass?: "bg-gray";
+    sectionClass?: string;
+    colClass?: string;
 }
-const { id, sub_title, main_title, imageSrc, imageAlt, bgClass } = Astro.props;
+const {
+    id,
+    sub_title,
+    main_title,
+    imageSrc,
+    imageAlt,
+    sectionClass,
+    colClass,
+} = Astro.props;
 ---
 
-<section id={id} class:list={["pt-120 relative", bgClass]}>
+<section id={id} class:list={["pt-120 relative", sectionClass]}>
     <div class="about_image flex items-end justify-end">
         <div class="image lg:pr-13">
             <img src={imageSrc} alt={imageAlt} />
@@ -20,7 +29,7 @@ const { id, sub_title, main_title, imageSrc, imageAlt, bgClass } = Astro.props;
     <div class="container">
         <div class="row justify-end">
             <div class="w-full lg:w-1/2">
-                <div class="mx-4 pt-11 lg:pt-15 lg:pb-15">
+                <div class:list={["mx-4 pt-11 lg:pt-15 lg:pb-15", colClass]}>
                     <div class="section_title pb-9">
                         <h5 class="sub_title">{sub_title}</h5>
                         <h4 class="main_title">{main_title}</h4>
@@ -57,8 +66,5 @@ const { id, sub_title, main_title, imageSrc, imageAlt, bgClass } = Astro.props;
     }
     .about_image img {
         @apply max-w-full lg:w-auto lg:max-w-screen-md;
-    }
-    .about_check i {
-        @apply w-7 h-7 flex items-center justify-center text-white bg-theme-color rounded-full text-base mt-1;
     }
 </style>

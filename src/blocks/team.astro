@@ -1,5 +1,6 @@
 ---
 import "tiny-slider/dist/tiny-slider.css";
+import SectionRow from "./sectionRow.astro";
 import TeamMember from "./teamMember.astro";
 
 interface Props {
@@ -39,60 +40,38 @@ const { id } = Astro.props;
     });
 </script>
 
-<section id={id} class="team_area bg-gray pt-120 pb-120">
-    <div class="container">
-        <div class="row justify-center">
-            <div class="w-full lg:w-1/2">
-                <div class="section_title text-center pb-6">
-                    <h5 class="sub_title">Team</h5>
-                    <h4 class="main_title">Meet Our Team Members</h4>
-                </div>
-                <!-- section title -->
-            </div>
-        </div>
-        <!-- row -->
-        <div class="team-wrapper relative">
-            <div class="row team_active">
-                <TeamMember
-                    imageSrc={`${import.meta.env.BASE_URL}images/team-1.jpg`}
-                    title="Chris Dave"
-                    description="Founder and CEO"
-                />
-                <TeamMember
-                    imageSrc={`${import.meta.env.BASE_URL}images/team-3.jpg`}
-                    title="Sarah Doe"
-                    description="UI Designer"
-                />
-                <TeamMember
-                    imageSrc={`${import.meta.env.BASE_URL}images/team-5.jpg`}
-                    title="Rob Hope"
-                    description="Dr. Software Engineer"
-                />
-                <TeamMember
-                    imageSrc={`${import.meta.env.BASE_URL}images/team-2.jpg`}
-                    title="Micheal Jordan"
-                    description="Business Development Manager"
-                />
-            </div>
-        </div>
-        <!-- row -->
-    </div>
-</section>
+<SectionRow
+    id={id}
+    sectionClass="team_area bg-gray pt-120 pb-120"
+    sub_title="Team"
+    main_title="Meet Our Team Members"
+    rowClass="team_active"
+>
+    <TeamMember
+        imageSrc={`${import.meta.env.BASE_URL}images/team-1.jpg`}
+        title="Chris Dave"
+        description="Founder and CEO"
+    />
+    <TeamMember
+        imageSrc={`${import.meta.env.BASE_URL}images/team-3.jpg`}
+        title="Sarah Doe"
+        description="UI Designer"
+    />
+    <TeamMember
+        imageSrc={`${import.meta.env.BASE_URL}images/team-5.jpg`}
+        title="Rob Hope"
+        description="Dr. Software Engineer"
+    />
+    <TeamMember
+        imageSrc={`${import.meta.env.BASE_URL}images/team-2.jpg`}
+        title="Micheal Jordan"
+        description="Business Development Manager"
+    />
+</SectionRow>
+
 <!-- container -->
 <style>
-    .container {
-        @apply px-4;
-    }
     .row {
         @apply flex flex-wrap;
-    }
-    .section_title .sub_title {
-        @apply text-base md:text-xl font-semibold text-theme-color;
-    }
-    .section_title .main_title {
-        @apply text-2xl md:text-4xl font-bold mt-4;
-    }
-    .section_title p {
-        @apply mt-5;
     }
 </style>
