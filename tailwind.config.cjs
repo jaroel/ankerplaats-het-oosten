@@ -70,11 +70,37 @@ module.exports = {
         black: '#38424D',
         gray: '#FBFBFF',
         yellow: '#FDD446',
-        'theme-color': '#F94F4F',
-        'border-color': '#E8E8E8',
-        'body-color': '#747E88',
-        'heading-color': '#162447',
+        'theme-color': '#cf423a', // AHO-red-500
+        'border-color': '#e6eaef', // AHO-blue-100
+        'body-color': '#66809d', // AHO-blue-300
+        'heading-color': '#002b5c', // AHO-blue-500
         shadow: '#9D6A6A',
+        // https://tailcolor.com/palettes/cf423a
+        'AHO-red': {
+          50: '#faeceb',
+          100: '#f5d9d8',
+          200: '#ecb3b0',
+          300: '#e28e89',
+          400: '#d96861',
+          500: '#cf423a',
+          600: '#a6352e',
+          700: '#7c2823',
+          800: '#531a17',
+          900: '#290d0c',
+        },
+        // https://tailcolor.com/palettes/002b5c
+        'AHO-blue': {
+          50: '#e6eaef',
+          100: '#ccd5de',
+          200: '#99aabe',
+          300: '#66809d',
+          400: '#33557d',
+          500: '#002b5c',
+          600: '#00224a',
+          700: '#001a37',
+          800: '#001125',
+          900: '#000912',
+        },
       },
 
       zIndex: {
