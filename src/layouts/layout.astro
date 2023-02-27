@@ -1,6 +1,8 @@
 ---
 import "@fontsource/nunito";
 import Footer from "../components/footer.astro";
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -15,11 +17,11 @@ import Footer from "../components/footer.astro";
 
         <link
             rel="stylesheet"
-            href=`${import.meta.env.BASE_URL}fonts/lineicons/font-css/LineIcons.css`
+            href={`${BASE_URL}fonts/lineicons/font-css/LineIcons.css`}
         />
         <link
             rel="shortcut icon"
-            href=`${import.meta.env.BASE_URL}images/favicon.png`
+            href={`${BASE_URL}images/favicon.png`}
             type="image/png"
         />
     </head>
@@ -37,7 +39,7 @@ import Footer from "../components/footer.astro";
                             >
                                 <a class="navbar-brand mr-5" href="index.html">
                                     <img
-                                        src=`${import.meta.env.BASE_URL}images/logo.svg`
+                                        src={`${BASE_URL}images/logo.svg`}
                                         alt="Logo"
                                     />
                                 </a>
@@ -121,67 +123,67 @@ import Footer from "../components/footer.astro";
             >
                 <div class="hero_shape shape_1">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-1.svg`
+                        src={`${BASE_URL}images/shape/shape-1.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_2">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-2.svg`
+                        src={`${BASE_URL}images/shape/shape-2.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_3">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-3.svg`
+                        src={`${BASE_URL}images/shape/shape-3.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_4">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-4.svg`
+                        src={`${BASE_URL}images/shape/shape-4.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_6">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-1.svg`
+                        src={`${BASE_URL}images/shape/shape-1.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_7">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-4.svg`
+                        src={`${BASE_URL}images/shape/shape-4.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_8">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-3.svg`
+                        src={`${BASE_URL}images/shape/shape-3.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_9">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-2.svg`
+                        src={`${BASE_URL}images/shape/shape-2.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_10">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-4.svg`
+                        src={`${BASE_URL}images/shape/shape-4.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_11">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-1.svg`
+                        src={`${BASE_URL}images/shape/shape-1.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
                 <div class="hero_shape shape_12">
                     <img
-                        src=`${import.meta.env.BASE_URL}images/shape/shape-2.svg`
+                        src={`${BASE_URL}images/shape/shape-2.svg`}
                         alt="shape"
                     />
                 </div><!-- hero shape -->
@@ -218,8 +220,8 @@ import Footer from "../components/footer.astro";
                 <div class="header_image flex items-center">
                     <div class="image 2xl:pl-25">
                         <img
-                            src=`${import.meta.env.BASE_URL}images/header-image.svg`
-                            alt="Header Image"
+                            src={`${BASE_URL}images/header-image.svg`}
+                            alt="Header Image henk"
                         />
                     </div>
                 </div>

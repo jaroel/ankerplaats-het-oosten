@@ -5,6 +5,8 @@ interface Props {
     id: string;
 }
 const { id } = Astro.props;
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <SectionRow
@@ -20,7 +22,7 @@ const { id } = Astro.props;
         >
             <div class="blog_image">
                 <img
-                    src=`${import.meta.env.BASE_URL}images/blog-1.jpg`
+                    src={`${BASE_URL}images/blog-1.jpg`}
                     alt="blog"
                     class="w-full"
                 />
@@ -52,7 +54,7 @@ const { id } = Astro.props;
         >
             <div class="blog_image">
                 <img
-                    src=`${import.meta.env.BASE_URL}images/blog-2.jpg`
+                    src={`${BASE_URL}images/blog-2.jpg`}
                     alt="blog"
                     class="w-full"
                 />
@@ -84,7 +86,7 @@ const { id } = Astro.props;
         >
             <div class="blog_image">
                 <img
-                    src=`${import.meta.env.BASE_URL}images/blog-3.jpg`
+                    src={`${BASE_URL}images/blog-3.jpg`}
                     alt="blog"
                     class="w-full"
                 />

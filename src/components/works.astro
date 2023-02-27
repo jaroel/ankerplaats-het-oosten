@@ -7,6 +7,8 @@ const { id } = Astro.props;
 import "tiny-slider/dist/tiny-slider.css";
 import SectionRow from "./sectionRow.astro";
 import WorkItem from "./workItem.astro";
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <script>
@@ -51,42 +53,42 @@ import WorkItem from "./workItem.astro";
     rowClass="work_active"
 >
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-1.jpg`}
+        imageSrc={`${BASE_URL}images/work-1.jpg`}
         title="Marketing"
         description="NoCodeAPI"
     />
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-2.jpg`}
+        imageSrc={`${BASE_URL}images/work-2.jpg`}
         title="Creative Design"
         description="UIdeck"
     />
 
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-3.jpg`}
+        imageSrc={`${BASE_URL}images/work-3.jpg`}
         title="Web Design"
         description="GrayGrids"
     />
 
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-4.jpg`}
+        imageSrc={`${BASE_URL}images/work-4.jpg`}
         title="Analysis"
         description="Ayro UI"
     />
 
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-5.jpg`}
+        imageSrc={`${BASE_URL}images/work-5.jpg`}
         title="SMM"
         description="LineIcons"
     />
 
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-3.jpg`}
+        imageSrc={`${BASE_URL}images/work-3.jpg`}
         title="SEO"
         description="PageBulb"
     />
 
     <WorkItem
-        imageSrc={`${import.meta.env.BASE_URL}images/work-4.jpg`}
+        imageSrc={`${BASE_URL}images/work-4.jpg`}
         title="Mobile App"
         description="Rocket Internet LTD"
     />

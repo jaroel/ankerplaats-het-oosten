@@ -13,6 +13,7 @@ const { id } = Astro.props;
 
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
+            // @ts-ignore: dataset
             const target = document.querySelector(tab.dataset.tabTarget);
             tabContents.forEach((tabContent) => {
                 tabContent.classList.remove("active");

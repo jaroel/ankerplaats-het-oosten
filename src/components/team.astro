@@ -7,6 +7,8 @@ interface Props {
     id: string;
 }
 const { id } = Astro.props;
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <script>
@@ -48,22 +50,22 @@ const { id } = Astro.props;
     rowClass="team_active"
 >
     <TeamMember
-        imageSrc={`${import.meta.env.BASE_URL}images/team-1.jpg`}
+        imageSrc={`${BASE_URL}images/team-1.jpg`}
         title="Chris Dave"
         description="Founder and CEO"
     />
     <TeamMember
-        imageSrc={`${import.meta.env.BASE_URL}images/team-3.jpg`}
+        imageSrc={`${BASE_URL}images/team-3.jpg`}
         title="Sarah Doe"
         description="UI Designer"
     />
     <TeamMember
-        imageSrc={`${import.meta.env.BASE_URL}images/team-5.jpg`}
+        imageSrc={`${BASE_URL}images/team-5.jpg`}
         title="Rob Hope"
         description="Dr. Software Engineer"
     />
     <TeamMember
-        imageSrc={`${import.meta.env.BASE_URL}images/team-2.jpg`}
+        imageSrc={`${BASE_URL}images/team-2.jpg`}
         title="Micheal Jordan"
         description="Business Development Manager"
     />
