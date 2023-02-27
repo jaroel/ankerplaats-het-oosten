@@ -59,7 +59,7 @@ const BASE_URL = import.meta.env.BASE_URL;
                                 </button>
 
                                 <div
-                                    class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto collapse navbar-collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
+                                    class="absolute left-0 z-99 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto navbar-collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
                                     id="navbarOne"
                                 >
                                     <ul
@@ -248,90 +248,89 @@ const BASE_URL = import.meta.env.BASE_URL;
         <!--====== BACK TOP TOP PART ENDS ======-->
     </body>
 </html>
-<script is:inline>
-    (function () {
-        /* =====================================
+<script is:inline type="module">
+    /* =====================================
         Sticky
         ======================================= */
-        window.addEventListener("scroll", () => {
-            const header_navbar = document.querySelector(".navbar-area");
-            const sticky = header_navbar.offsetTop;
+    window.addEventListener("scroll", () => {
+        const header_navbar = document.querySelector(".navbar-area");
+        const sticky = header_navbar.offsetTop;
 
-            if (window.pageYOffset > sticky) {
-                header_navbar.classList.add("sticky");
-            } else {
-                header_navbar.classList.remove("sticky");
-            }
+        if (window.pageYOffset > sticky) {
+            header_navbar.classList.add("sticky");
+        } else {
+            header_navbar.classList.remove("sticky");
+        }
 
-            // Show or hide the back-top-top button
-            const backToTo = document.querySelector(".scroll-top");
-            backToTo.style.display =
-                document.body.scrollTop > 50 ||
-                document.documentElement.scrollTop > 50
-                    ? "flex"
-                    : "none";
+        // Show or hide the back-top-top button
+        const backToTo = document.querySelector(".scroll-top");
+        backToTo.style.display =
+            document.body.scrollTop > 50 ||
+            document.documentElement.scrollTop > 50
+                ? "flex"
+                : "none";
+    });
+
+    // For menu scroll
+    const pageLink = document.querySelectorAll(".page-scroll");
+
+    for (const element of pageLink) {
+        element.addEventListener("click", (e) => {
+            e.preventDefault();
+            document
+                .querySelector(element.getAttribute("href"))
+                .scrollIntoView({
+                    behavior: "smooth",
+                    offsetTop: 1 - 60,
+                });
         });
+    }
 
-        // For menu scroll
-        const pageLink = document.querySelectorAll(".page-scroll");
+    // Section menu active
+    function onScroll(event) {
+        const sections = document.querySelectorAll(".page-scroll");
+        const scrollPos =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop;
 
-        for (const element of pageLink) {
-            element.addEventListener("click", (e) => {
-                e.preventDefault();
+        for (const currLink of sections) {
+            const value = currLink.getAttribute("href");
+            const refElement = document.querySelector(value);
+            const scrollTopMinus = scrollPos + 73;
+            if (
+                refElement.offsetTop <= scrollTopMinus &&
+                refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+            ) {
                 document
-                    .querySelector(element.getAttribute("href"))
-                    .scrollIntoView({
-                        behavior: "smooth",
-                        offsetTop: 1 - 60,
-                    });
-            });
-        }
-
-        // Section menu active
-        function onScroll(event) {
-            const sections = document.querySelectorAll(".page-scroll");
-            const scrollPos =
-                window.pageYOffset ||
-                document.documentElement.scrollTop ||
-                document.body.scrollTop;
-
-            for (const currLink of sections) {
-                const value = currLink.getAttribute("href");
-                const refElement = document.querySelector(value);
-                const scrollTopMinus = scrollPos + 73;
-                if (
-                    refElement.offsetTop <= scrollTopMinus &&
-                    refElement.offsetTop + refElement.offsetHeight >
-                        scrollTopMinus
-                ) {
-                    document
-                        .querySelector(".page-scroll")
-                        .classList.remove("active");
-                    currLink.classList.add("active");
-                } else {
-                    currLink.classList.remove("active");
-                }
+                    .querySelector(".page-scroll")
+                    .classList.remove("active");
+                currLink.classList.add("active");
+            } else {
+                currLink.classList.remove("active");
             }
         }
+    }
 
-        window.document.addEventListener("scroll", onScroll);
+    window.document.addEventListener("scroll", onScroll);
 
-        // ===== close navbar-collapse when a  clicked
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector(".navbar-collapse");
+    // ===== close navbar-collapse when a  clicked
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
 
-        for (const e of document.querySelectorAll(".page-scroll")) {
-            e.addEventListener("click", () => {
-                navbarToggler.classList.remove("active");
-                navbarCollapse.classList.remove("show");
-            });
-        }
-
-        navbarToggler.addEventListener("click", () => {
-            navbarToggler.classList.toggle("active");
-            // NavbarCollapse.classList.toggle('show')
+    for (const e of document.querySelectorAll(".page-scroll")) {
+        e.addEventListener("click", () => {
+            navbarToggler.classList.remove("active");
+            navbarCollapse.classList.remove("show");
         });
-    })();
+    }
+
+    navbarToggler.addEventListener("click", () => {
+        navbarToggler.classList.toggle("active");
+        navbarCollapse.classList.toggle("show");
+        navbarCollapse.classList.toggle("hidden");
+        // navbarCollapse.classList.toggle("collapse");
+    });
 </script>
 <style>
     html {
