@@ -10,7 +10,7 @@
 		"build": "xo && astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "xo"
+		"lint": "xo && astro check"
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^3.0.1",
