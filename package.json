@@ -6,10 +6,11 @@
 	"scripts": {
 		"check": "astro check",
 		"dev": "astro dev",
-		"start": "astro check && astro dev",
-		"build": "astro check && astro build",
+		"start": "xo && astro check && astro dev",
+		"build": "xo && astro check && astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"lint": "xo"
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^3.0.1",
