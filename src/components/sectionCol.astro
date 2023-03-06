@@ -1,9 +1,11 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 interface Props {
     id: string;
     sub_title: string;
     main_title: string;
-    imageSrc: string;
+    imageSrc: Promise<typeof import("*.jpeg")>;
     imageAlt: string;
     imageHeight?: number;
     imageClass?: string;
@@ -31,11 +33,12 @@ const {
         ]}
     >
         <div class="image lg:pr-13">
-            <img
+            <Image
                 class="shadow-md shadow-heading-color"
                 src={imageSrc}
                 alt={imageAlt}
-                style={imageHeight ? `height: ${imageHeight}px` : ""}
+                height={imageHeight}
+                quality={100}
             />
         </div>
     </div>

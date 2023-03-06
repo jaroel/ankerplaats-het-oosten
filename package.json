@@ -13,6 +13,7 @@
 		"lint": "xo && astro check"
 	},
 	"dependencies": {
+		"@astrojs/image": "^0.15.1",
 		"@astrojs/tailwind": "^3.0.1",
 		"@fontsource/nunito": "^4.5.12",
 		"astro": "^2.0.17",

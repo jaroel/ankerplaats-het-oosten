@@ -1,6 +1,8 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 interface Props {
-    imageSrc: string;
+    imageSrc: Promise<typeof import("*.jpeg")>;
     title: string;
     description: string;
 }
@@ -11,7 +13,13 @@ const { imageSrc, title, description } = Astro.props;
     <div class="single_team_item mx-auto">
         <div class="single_team mx-3">
             <div class="team_image relative">
-                <img src={imageSrc} alt="team" class="w-full" />
+                <Image
+                    src={imageSrc}
+                    alt="team"
+                    class="w-full"
+                    height={510}
+                    quality={100}
+                />
                 <ul class="social absolute top-4 right-8">
                     <li>
                         <a href="#"><i class="lni lni-facebook-filled"></i></a>

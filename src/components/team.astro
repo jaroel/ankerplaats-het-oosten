@@ -8,7 +8,7 @@ interface Props {
 }
 const { id } = Astro.props;
 
-const BASE_URL = import.meta.env.BASE_URL;
+const imgMarjon = import("../../public/images/marjon.jpeg");
 ---
 
 <script>
@@ -49,11 +49,7 @@ const BASE_URL = import.meta.env.BASE_URL;
     main_title="Meet Our Team Members"
     rowClass="team_active"
 >
-    <TeamMember
-        imageSrc={BASE_URL + "images/marjon.jpeg"}
-        title="Marjon Bruggink"
-        description=""
-    />
+    <TeamMember imageSrc={imgMarjon} title="Marjon Bruggink" description="" />
 </SectionRow>
 
 <!-- container -->
