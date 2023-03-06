@@ -1,0 +1,255 @@
+---
+interface Props {
+    id: string;
+}
+const { id } = Astro.props;
+const BASE_URL = import.meta.env.BASE_URL;
+---
+
+<!--====== HEADER PART START ======-->
+<section class="header_area">
+    <div class="navbar-area bg-white">
+        <div class="container relative">
+            <div class="row items-center">
+                <div class="w-full">
+                    <nav
+                        class="flex items-center justify-between py-4 navbar navbar-expand-lg"
+                    >
+                        <a class="navbar-brand mr-5" href="index.html">
+                            <img
+                                src={BASE_URL + "images/logo.png"}
+                                alt="Logo"
+                                style="height: 80px"
+                            />
+                        </a>
+                        <button
+                            class="block navbar-toggler focus:outline-none lg:hidden"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarOne"
+                            aria-controls="navbarOne"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+
+                        <div
+                            class="absolute left-0 z-99 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto navbar-collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
+                            id="navbarOne"
+                        >
+                            <ul
+                                id="nav"
+                                class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex"
+                            >
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll active" href="#home"
+                                        >Home</a
+                                    >
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#about"
+                                        >About</a
+                                    >
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#services"
+                                        >Services</a
+                                    >
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#work"
+                                        >Projects</a
+                                    >
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#pricing"
+                                        >Pricing</a
+                                    >
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#blog">Blog</a>
+                                </li>
+                                <li class="nav-item ml-5 lg:ml-11">
+                                    <a class="page-scroll" href="#contact"
+                                        >Contact</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- navbar collapse -->
+                    </nav>
+                    <!-- navbar -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- header navbar -->
+
+    <div
+        id={id}
+        class="header_hero bg-gray relative z-10 overflow-hidden lg:flex items-center"
+    >
+        <div class="hero_shape shape_1">
+            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_2">
+            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_3">
+            <img src={BASE_URL + "images/shape/shape-3.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_4">
+            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_6">
+            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_7">
+            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_8">
+            <img src={BASE_URL + "images/shape/shape-3.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_9">
+            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_10">
+            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_11">
+            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
+        </div><!-- hero shape -->
+        <div class="hero_shape shape_12">
+            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
+        </div><!-- hero shape -->
+
+        <div class="container">
+            <div class="row">
+                <div class="w-full lg:w-1/2">
+                    <div class="header_hero_content pt-150 lg:pt-0">
+                        <h2
+                            class="hero_title text-2xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold"
+                        >
+                            Ankerplaats <span class="text-theme-color"
+                                >Het Oosten</span
+                            >
+                        </h2>
+                        <p class="mt-8 lg:mr-8">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut
+                            labore et dolore magna.
+                        </p>
+                        <div class="hero_btn mt-10">
+                            <a class="main-btn" href="#0">Get Started</a>
+                        </div>
+                    </div>
+                    <!-- header hero content -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+        <div class="header_shape hidden lg:block"></div>
+
+        <div class="header_image flex items-center">
+            <div class="image 2xl:pl-25">
+                <img
+                    class="shadow-md shadow-heading-color"
+                    src={BASE_URL + "images/bospad-zon.jpeg"}
+                    alt="Header Image henk"
+                />
+            </div>
+        </div>
+        <!-- header image -->
+    </div>
+    <!-- header hero -->
+</section>
+
+<!--====== HEADER PART ENDS ======-->
+
+<style>
+    .main-btn {
+        @apply inline-block font-medium text-base text-center rounded-full text-white cursor-pointer z-10 transition-all duration-300 bg-black overflow-hidden relative px-10 py-4 hover:bg-opacity-80 hover:text-white;
+        border-top-right-radius: 0px;
+    }
+
+    .header_hero {
+        height: 900px;
+    }
+    @media (max-width: 1400px) {
+        .header_hero {
+            height: 800px;
+        }
+    }
+    .hero_shape {
+        @apply absolute opacity-40 -z-10;
+    }
+    .shape_1 {
+        @apply top-150;
+        left: 10%;
+    }
+    .shape_2 {
+        @apply top-150;
+        left: 30%;
+    }
+    .shape_3 {
+        @apply top-200;
+        left: 40%;
+    }
+    .shape_4 {
+        @apply top-120;
+        left: 50%;
+    }
+    .shape_5 {
+        top: 40%;
+        left: 14%;
+    }
+    .shape_6 {
+        top: 34%;
+        left: 48%;
+    }
+    .shape_7 {
+        top: 60%;
+        left: 80px;
+    }
+    .shape_8 {
+        top: 55%;
+        left: 38%;
+    }
+    .shape_9 {
+        @apply bottom-25;
+        left: 13%;
+    }
+    .shape_10 {
+        @apply bottom-200 left-1/4;
+    }
+    .shape_11 {
+        @apply bottom-20;
+        left: 35%;
+    }
+    .shape_12 {
+        @apply bottom-1/4;
+        left: 42%;
+    }
+    .header_shape {
+        @apply absolute top-0 right-0 h-full w-1/2;
+    }
+    .header_shape::before {
+        content: "";
+        background-color: #f5f5fc;
+        transform: skewX(-15deg);
+        width: 200%;
+        @apply absolute top-0 left-0 h-full;
+    }
+    .header_image {
+        @apply lg:absolute top-0 right-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
+    }
+    .header_image img {
+        @apply max-w-full lg:w-auto xl:max-w-screen-md;
+    }
+</style>

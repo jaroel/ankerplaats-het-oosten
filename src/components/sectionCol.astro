@@ -5,6 +5,8 @@ interface Props {
     main_title: string;
     imageSrc: string;
     imageAlt: string;
+    imageHeight?: number;
+    imageClass?: string;
     sectionClass?: string;
     colClass?: string;
 }
@@ -14,15 +16,27 @@ const {
     main_title,
     imageSrc,
     imageAlt,
+    imageHeight,
+    imageClass,
     sectionClass,
     colClass,
 } = Astro.props;
 ---
 
 <section id={id} class:list={["pt-120 relative", sectionClass]}>
-    <div class="about_image flex items-end justify-end">
+    <div
+        class:list={[
+            "about_image flex items-end lg:justify-end justify-center",
+            imageClass,
+        ]}
+    >
         <div class="image lg:pr-13">
-            <img src={imageSrc} alt={imageAlt} />
+            <img
+                class="shadow-md shadow-heading-color"
+                src={imageSrc}
+                alt={imageAlt}
+                style={imageHeight ? `height: ${imageHeight}px` : ""}
+            />
         </div>
     </div>
     <!-- about image -->

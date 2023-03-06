@@ -1,0 +1,24 @@
+<a href="#" class="scroll-top" style="display: none"
+    ><i class="lni lni-chevron-up"></i></a
+>
+
+<script is:inline type="module">
+    window.addEventListener("scroll", () => {
+        // Show or hide the back-top-top button
+        const backToTo = document.querySelector(".scroll-top");
+        backToTo.style.display =
+            document.body.scrollTop > 50 ||
+            document.documentElement.scrollTop > 50
+                ? "flex"
+                : "none";
+    });
+</script>
+
+<style>
+    .scroll-top {
+        @apply w-11 h-11 bg-theme-color flex justify-center items-center text-white fixed bottom-8 right-8 rounded-md text-lg transition-all duration-300 z-20;
+    }
+    .scroll-top:hover {
+        @apply text-white;
+    }
+</style>
