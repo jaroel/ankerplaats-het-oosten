@@ -1,20 +1,21 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+import logo from "~/assets/logo.png";
 
-const BASE_URL = import.meta.env.BASE_URL;
-const imageLogo = import("../../public/images/logo.png");
+import footerShapeLeft from "~/assets/footer-shape-left.png";
+import footerShapeRight from "~/assets/footer-shape-right.png";
 ---
 
 <footer id="footer" class="footer_area bg-black relative z-10">
     <div
         class="shape absolute left-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
     >
-        <img src={BASE_URL + "images/footer-shape-left.png"} alt="" />
+        <Image src={footerShapeLeft} alt="" quality="low" />
     </div>
     <div
         class="shape absolute right-0 top-0 opacity-5 h-full overflow-hidden w-1/3"
     >
-        <img src={BASE_URL + "images/footer-shape-right.png"} alt="" />
+        <Image src={footerShapeRight} alt="" quality="low" />
     </div>
     <div class="container">
         <div class="footer_widget pt-18 pb-120">
@@ -24,10 +25,9 @@ const imageLogo = import("../../public/images/logo.png");
                         <div class="footer_logo p-8 bg-white">
                             <a href="#"
                                 ><Image
-                                    src={imageLogo}
+                                    src={logo}
                                     alt="Logo van Ankerplaats Het Oosten"
-                                    width={420}
-                                    quality={100}
+                                    quality="max"
                                 /></a
                             >
                         </div>

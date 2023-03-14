@@ -5,14 +5,14 @@ interface Props {
 }
 const { id } = Astro.props;
 
-const imageDijk = import("../../public/images/dijk-uitzicht-zee.jpeg");
+import dijk from "~/assets/dijk-uitzicht-zee.jpeg";
 ---
 
 <SectionCol
     id={id}
     sub_title="Why Choose Us"
     main_title="Your Goal is Our Achievement"
-    imageSrc={imageDijk}
+    imageSrc={dijk}
     imageAlt="About"
     imageHeight={540}
 >

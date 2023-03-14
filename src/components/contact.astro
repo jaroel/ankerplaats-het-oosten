@@ -5,14 +5,14 @@ interface Props {
 }
 const { id } = Astro.props;
 
-const imageTegel = import("../../public/images/tegel.jpeg");
+import tegel from "~/assets/tegel.jpeg";
 ---
 
 <SectionCol
     id={id}
     sub_title="Contact"
     main_title="Get In Touch"
-    imageSrc={imageTegel}
+    imageSrc={tegel}
     imageAlt="About"
     imageHeight={640}
     imageClass="lg:justify-center"

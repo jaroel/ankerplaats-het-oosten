@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
-    imageSrc: string;
+    imageSrc: ImageMetadata;
     title: string;
     description: string;
 }
@@ -11,7 +13,7 @@ const { imageSrc, title, description } = Astro.props;
     <div class="single_item mx-auto">
         <div class="single_work mx-3">
             <div>
-                <img src={imageSrc} alt="work" class="w-full" />
+                <Image src={imageSrc} alt="work" class="w-full" />
             </div>
             <div class="work_content">
                 <a href="#" class="arrow"
