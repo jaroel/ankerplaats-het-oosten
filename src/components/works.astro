@@ -8,7 +8,11 @@ import "tiny-slider/dist/tiny-slider.css";
 import SectionRow from "./sectionRow.astro";
 import WorkItem from "./workItem.astro";
 
-const BASE_URL = import.meta.env.BASE_URL;
+import work1 from "~/assets/work-1.jpg";
+import work2 from "~/assets/work-2.jpg";
+import work3 from "~/assets/work-3.jpg";
+import work4 from "~/assets/work-4.jpg";
+import work5 from "~/assets/work-5.jpg";
 ---
 
 <script>
@@ -52,43 +56,15 @@ const BASE_URL = import.meta.env.BASE_URL;
     sectionClass="bg-gray pt-120 pb-120"
     rowClass="work_active"
 >
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-1.jpg"}
-        title="Marketing"
-        description="NoCodeAPI"
-    />
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-2.jpg"}
-        title="Creative Design"
-        description="UIdeck"
-    />
+    <WorkItem imageSrc={work1} title="Marketing" description="NoCodeAPI" />
+    <WorkItem imageSrc={work2} title="Creative Design" description="UIdeck" />
+    <WorkItem imageSrc={work3} title="Web Design" description="GrayGrids" />
+    <WorkItem imageSrc={work4} title="Analysis" description="Ayro UI" />
+    <WorkItem imageSrc={work5} title="SMM" description="LineIcons" />
+    <WorkItem imageSrc={work3} title="SEO" description="PageBulb" />
 
     <WorkItem
-        imageSrc={BASE_URL + "images/work-3.jpg"}
-        title="Web Design"
-        description="GrayGrids"
-    />
-
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-4.jpg"}
-        title="Analysis"
-        description="Ayro UI"
-    />
-
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-5.jpg"}
-        title="SMM"
-        description="LineIcons"
-    />
-
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-3.jpg"}
-        title="SEO"
-        description="PageBulb"
-    />
-
-    <WorkItem
-        imageSrc={BASE_URL + "images/work-4.jpg"}
+        imageSrc={work4}
         title="Mobile App"
         description="Rocket Internet LTD"
     />

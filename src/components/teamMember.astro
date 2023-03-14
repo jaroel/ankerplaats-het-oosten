@@ -1,8 +1,8 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 interface Props {
-    imageSrc: Promise<typeof import("*.jpeg")>;
+    imageSrc: ImageMetadata;
     title: string;
     description: string;
 }
@@ -18,7 +18,7 @@ const { imageSrc, title, description } = Astro.props;
                     alt="team"
                     class="w-full"
                     height={510}
-                    quality={100}
+                    quality="max"
                 />
                 <ul class="social absolute top-4 right-8">
                     <li>

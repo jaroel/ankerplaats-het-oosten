@@ -1,13 +1,13 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 interface Props {
     id: string;
     sub_title: string;
     main_title: string;
-    imageSrc: Promise<typeof import("*.jpeg")>;
+    imageSrc: ImageMetadata;
     imageAlt: string;
-    imageHeight?: number;
+    imageHeight: number;
     imageClass?: string;
     sectionClass?: string;
     colClass?: string;
@@ -38,7 +38,7 @@ const {
                 src={imageSrc}
                 alt={imageAlt}
                 height={imageHeight}
-                quality={100}
+                quality="max"
             />
         </div>
     </div>

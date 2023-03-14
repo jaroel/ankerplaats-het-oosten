@@ -1,17 +1,20 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 interface Props {
     id: string;
 }
 const { id } = Astro.props;
-const BASE_URL = import.meta.env.BASE_URL;
 
-const imageLogo = import("../../public/images/logo.png");
-const imageBospad = import("../../public/images/bospad-zon.jpeg");
+import logoHeader from "~/assets/logo.png";
+import bospad from "~/assets/bospad-zon.jpeg";
+
+import shape1 from "~/assets/shape-1.svg";
+import shape2 from "~/assets/shape-2.svg";
+import shape3 from "~/assets/shape-3.svg";
+import shape4 from "~/assets/shape-4.svg";
 ---
 
-<!--====== HEADER PART START ======-->
 <section class="header_area">
     <div class="navbar-area bg-white">
         <div class="container relative">
@@ -21,7 +24,12 @@ const imageBospad = import("../../public/images/bospad-zon.jpeg");
                         class="flex items-center justify-between py-4 navbar navbar-expand-lg"
                     >
                         <a class="navbar-brand mr-5" href="index.html">
-                            <Image src={imageLogo} alt="Logo" height={80} />
+                            <Image
+                                src={logoHeader}
+                                alt="Logo"
+                                height={80}
+                                quality="max"
+                            />
                         </a>
                         <button
                             class="block navbar-toggler focus:outline-none lg:hidden"
@@ -96,38 +104,38 @@ const imageBospad = import("../../public/images/bospad-zon.jpeg");
         class="header_hero bg-gray relative z-10 overflow-hidden lg:flex items-center"
     >
         <div class="hero_shape shape_1">
-            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape1.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_2">
-            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape2.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_3">
-            <img src={BASE_URL + "images/shape/shape-3.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape3.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_4">
-            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape4.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_6">
-            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape1.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_7">
-            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape4.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_8">
-            <img src={BASE_URL + "images/shape/shape-3.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape3.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_9">
-            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape2.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_10">
-            <img src={BASE_URL + "images/shape/shape-4.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape4.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_11">
-            <img src={BASE_URL + "images/shape/shape-1.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape1.src} alt="shape" />
+        </div>
         <div class="hero_shape shape_12">
-            <img src={BASE_URL + "images/shape/shape-2.svg"} alt="shape" />
-        </div><!-- hero shape -->
+            <img src={shape2.src} alt="shape" />
+        </div>
 
         <div class="container">
             <div class="row">
@@ -161,9 +169,9 @@ const imageBospad = import("../../public/images/bospad-zon.jpeg");
             <div class="image 2xl:pl-25">
                 <Image
                     class="shadow-md shadow-heading-color"
-                    src={imageBospad}
-                    alt="Header Image henk"
-                    quality={100}
+                    src={bospad}
+                    alt="Header Image"
+                    quality="max"
                 />
             </div>
         </div>
